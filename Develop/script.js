@@ -3,47 +3,47 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  var charset = "";
+  var bank = "";
   
-  let num_char = prompt("How many characters would you like your password to contain?");
+  let num = prompt("How many characters would you like your password to contain?");
 
-  if (num_char != null && num_char >= 8 && num_char <= 128) {
-    let special_char = confirm("Click OK to confirm special characters.");
+  if (num != null && num >= 8 && num <= 128) {
+    let special = confirm("Click OK to confirm special characters.");
 
-    if (special_char == true) {
+    if (special == true) {
       let specials = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-      charset = charset.concat(specials);
+      bank = bank.concat(specials);
     }
 
-    if (special_char != null) {
+    if (special != null) {
 
-      let numeric_char = confirm("Click OK to confirm including numeric characters.");
+      let numeric = confirm("Click OK to confirm including numeric characters.");
       
-      if (numeric_char == true) {
+      if (numeric == true) {
         let numerals = "0123456789";
-        charset = charset.concat(numerals);
+        bank = bank.concat(numerals);
       }
 
-      if (numeric_char != null) {
+      if (numeric != null) {
 
-        let lowercase_char = confirm("Click OK to include Lowercase characters.");
+        let lowercase = confirm("Click OK to include Lowercase characters.");
 
-        if (lowercase_char == true) {
+        if (lowercase == true) {
           let lowers = "abcdefghijklmnopqrstuvwxyz";
-          charset = charset.concat(lowers);
+          bank = bank.concat(lowers);
         }
 
-        if (lowercase_char != null) {
-          let uppercase_char = confirm("Click OK to include Uppercase characters.");
-          if (uppercase_char == true) {
+        if (lowercase != null) {
+          let uppercase = confirm("Click OK to include Uppercase characters.");
+          if (uppercase == true) {
             let uppers = "abcdefghijklmnopqrstuvwxyz";
             uppers = uppers.toUpperCase();
-            charset = charset.concat(uppers);
+            bank = bank.concat(uppers);
           }
 
           var password_ret = "";
-          for (let i=0; i < num_char; i++) {
-            let character = charset.charAt(Math.floor(Math.random() * charset.length));
+          for (let i=0; i < num; i++) {
+            let character = bank.charAt(Math.floor(Math.random() * bank.length));
             password_ret = password_ret.concat(character);
           }
 
